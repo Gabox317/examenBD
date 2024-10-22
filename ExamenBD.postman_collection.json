@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "7940bba8-864f-4620-86eb-5e74d9011a6a",
+		"name": "ExamenBD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32427872"
+	},
+	"item": [
+		{
+			"name": "CreacionDeEmpleado",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"genderId\": 1,\r\n    \"jobId\": 1,\r\n    \"name\": \"WERYHWEJERTHRTJ\",\r\n    \"lastName\": \"JE57J7JE\",\r\n    \"birthdate\": \"1983-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreacionDeHoras",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": 1,\r\n    \"workedDate\": \"2024-10-21\",\r\n    \"workedHours\": 8\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/hours/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hours",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empleados por empleo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"job_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees/byJob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"byJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Horas trabajaad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": 1,\r\n    \"startDate\": \"2024-01-01\",\r\n    \"endDate\": \"2024-01-31\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/workedHoursByDateRange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"workedHoursByDateRange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pago de empleado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": 123,\r\n    \"startDate\": \"2024-01-01\",\r\n    \"endDate\": \"2024-01-31\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employeePayment/totalPaymentByDateRange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employeePayment",
+						"totalPaymentByDateRange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RANGO SALARIO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/salary-range?min_salary=30000&max_salary=60000&order=asc&size=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"salary-range"
+					],
+					"query": [
+						{
+							"key": "min_salary",
+							"value": "30000"
+						},
+						{
+							"key": "max_salary",
+							"value": "60000"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
